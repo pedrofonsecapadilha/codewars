@@ -25,6 +25,6 @@ def alphabet_position(text)
 end
 
 # Best one
-def alphabet_position(text)
+def alphabet_position2(text)
   text.gsub(/[^a-z]/i, '').chars.map{ |c| c.downcase.ord - 96 }.join(' ')
 end

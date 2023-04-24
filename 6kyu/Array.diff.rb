@@ -9,6 +9,11 @@
   # array_diff([1,2],[1]) == [2]
 
 # My solution
-
+def array_diff(a, b)
+  a - b
+end
 
 # Best one
+def array_diff(a, b)
+  a - b
+end

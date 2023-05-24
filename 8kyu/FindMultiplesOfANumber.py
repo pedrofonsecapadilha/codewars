@@ -8,6 +8,16 @@
   # multiples of 2 up to 6.
 
 # My solution
-
+    # NÃO ENTENDI PORQUE NÃO ACEITOU, PARECE QUE TEM UM ERRO, POIS ALGUMAS RESPOSTAS PEDEM O ÚLTIMO NÚMERO QUE É
+    # IGUAL OU LIMIT E OUTRAS NÃO PEDEM.
+    # VI ALGUMAS SOLUÇÕES IGUAIS A MINHA
+def find_multiples(integer, limit):
+    result = [integer]
+    while result[-1] < limit:
+      result.append(result[-1] + integer)
+    return result
 
 # Best one
+    # TESTEI NO COLLAB E NÃO FUNCIONOU :(
+def find_multiples(integer, limit):
+    return list(range(integer, limit+1, integer))

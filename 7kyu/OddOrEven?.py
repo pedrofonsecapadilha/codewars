@@ -18,6 +18,14 @@
   # Have fun!
 
 # My solution
-
+def odd_or_even(arr):
+    if sum(arr) == 0:
+        return "even"
+    elif sum(arr) % 2 == 0:
+        return "even"
+    else:
+        return "odd"
 
 # Best one
+def oddOrEven(arr):
+    return 'even' if sum(arr) % 2 == 0 else 'odd'

@@ -28,7 +28,31 @@
 
   # lecture link: video
 
-# My solution
+# My solution (RESOLVI COM AJUDA, NÃO CONSEGUI FAZER SOZINHO :()
+class Recipe
+  attr_reader :name, :ingredients, :steps
 
+  def initialize(name, &block)
+    @name = name
+    @ingredients = []
+    @steps = []
+    instance_eval(&block) if block_given?
+  end
+
+  def ingredient(name)
+    @ingredients << name
+  end
+
+  def step(description)
+    @steps << description
+  end
+
+  def to_s
+    output = "#{name}\n"
+    output += "=" * name.length + "\n"
+    output += ingredients.join(", ") + "\n\n"
+    output += steps.each_with_index.map { |step, index| "#{index}.) #{step}\n" }.join()
+    output
+  end
 
 # Best one

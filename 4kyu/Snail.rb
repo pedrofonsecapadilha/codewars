@@ -19,16 +19,21 @@
   # NOTE: The idea is not sort the elements from the lowest value to the highest; the idea is to traverse the 2-d array in a clockwise snailshell pattern.
   # NOTE 2: The 0x0 (empty matrix) is represented as en empty array inside an array [[]].
 
-# My solution (ERRO - não reconhece a função reverse!)
+# My solution
 def snail(array)
   result = []
   while array.length > 0
     result += array.shift
     array.each { |row| result << row.pop }
-    result += array.pop.reverse
-    array.reverse_each { |row| result << row.shift }
+    if array.length != 0
+      result += array.pop.reverse
+      array.reverse_each { |row| result << row.shift }
+    end
   end
   result
 end
 
 # Best one
+def snail(array)
+  array.empty? ? [] : array.shift + snail(array.transpose.reverse)
+end
